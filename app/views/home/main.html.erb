@@ -1,0 +1,23 @@
+<h1>Home#main</h1>
+<p>Find me in app/views/home/main.html.erb</p>
+
+
+<% if user_signed_in? %>
+    <%= link_to "my Diary", diaries_path %>
+    
+    <%= month_calendar do |date| %>
+        <%= date %>
+      <div>
+        <% @diaries.each do |a| %>
+            <% if a.date === date %>
+                <%= link_to a.title, "/diaries/#{a.id}" %>
+            <% end %>
+        <% end %>
+          
+      </div>
+    <% end %>
+
+
+
+<% end %>  
+

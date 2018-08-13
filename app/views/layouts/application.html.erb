@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Workspace</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  
+  <nav>
+    <%= link_to "home", home_main_path %>
+    <br>
+      <% if user_signed_in? %>
+        <%= link_to "sign_out", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "sign_up", new_user_registration_path %>
+        <%= link_to "sign_in", new_user_session_path %>
+      <% end %>
+      
+    <div class="container">
+      <% if user_signed_in? %>
+          user_Email : <%= current_user.email %> 
+          <br> 
+          user_Name :<%= current_user.name %>
+      <% else %>
+          no user
+      <% end %>  
+    </div>  
+    
+    </nav>
+  
+  <div class='container' id='yield'>
+    <%= yield %>
+  </div>
+  
+  <footer>
+    
+  </footer>
+
+</body>
+</html>

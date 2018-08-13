@@ -1,0 +1,49 @@
+                  Prefix Verb   URI Pattern                    Controller#Action
+                 diaries GET    /diaries(.:format)             diaries#index
+                         POST   /diaries(.:format)             diaries#create
+               new_diary GET    /diaries/new(.:format)         diaries#new
+              edit_diary GET    /diaries/:id/edit(.:format)    diaries#edit
+                   diary GET    /diaries/:id(.:format)         diaries#show
+                         PATCH  /diaries/:id(.:format)         diaries#update
+                         PUT    /diaries/:id(.:format)         diaries#update
+                         DELETE /diaries/:id(.:format)         diaries#destroy
+                    root GET    /                              home#main
+               home_main GET    /home/main(.:format)           home#main
+        new_user_session GET    /users/sign_in(.:format)       users/sessions#new
+            user_session POST   /users/sign_in(.:format)       users/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)      users/sessions#destroy
+           user_password POST   /users/password(.:format)      devise/passwords#create
+       new_user_password GET    /users/password/new(.:format)  devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format) devise/passwords#edit
+                         PATCH  /users/password(.:format)      devise/passwords#update
+                         PUT    /users/password(.:format)      devise/passwords#update
+cancel_user_registration GET    /users/cancel(.:format)        devise/registrations#cancel
+       user_registration POST   /users(.:format)               devise/registrations#create
+   new_user_registration GET    /users/sign_up(.:format)       devise/registrations#new
+  edit_user_registration GET    /users/edit(.:format)          devise/registrations#edit
+                         PATCH  /users(.:format)               devise/registrations#update
+                         PUT    /users(.:format)               devise/registrations#update
+                         DELETE /users(.:format)               devise/registrations#destroy
+                rails_db        /rails/db                      RailsDb::Engine
+
+Routes for RailsDb::Engine:
+            root GET  /                                    rails_db/dashboard#index
+      table_data GET  /tables/:table_id/data(.:format)     rails_db/tables#data
+       table_csv GET  /tables/:table_id/csv(.:format)      rails_db/tables#csv
+  table_truncate GET  /tables/:table_id/truncate(.:format) rails_db/tables#truncate
+   table_destroy GET  /tables/:table_id/destroy(.:format)  rails_db/tables#destroy
+      table_edit GET  /tables/:table_id/edit(.:format)     rails_db/tables#edit
+    table_update PUT  /tables/:table_id/update(.:format)   rails_db/tables#update
+      table_xlsx GET  /tables/:table_id/xlsx(.:format)     rails_db/tables#xlsx
+       table_new GET  /tables/:table_id/new(.:format)      rails_db/tables#new
+    table_create POST /tables/:table_id/create(.:format)   rails_db/tables#create
+          tables GET  /tables(.:format)                    rails_db/tables#index
+           table GET  /tables/:id(.:format)                rails_db/tables#show
+             sql GET  /sql(.:format)                       rails_db/sql#index
+      sql_import GET  /import(.:format)                    rails_db/sql#import
+     sql_execute POST /execute(.:format)                   rails_db/sql#execute
+         sql_csv POST /sql-csv(.:format)                   rails_db/sql#csv
+         sql_xls POST /sql-xls(.:format)                   rails_db/sql#xls
+sql_start_import POST /import-start(.:format)              rails_db/sql#import_start
+      data_table GET  /data-table(.:format)                rails_db/dashboard#data_table
+      standalone GET  /standalone(.:format)                rails_
