@@ -19,14 +19,35 @@ $icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
 // @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
-
-nav, footer{
-    height : 10vh;
+nav{
+    height : 50px;
+}
+footer{
+    height : 100px;
 }
 
+nav{
+    border-style : solid;
+    border-width : 0px 0px 0.5px 0px;
+}
+footer {
+    text-align : center;
+    
+    border-style : solid;
+    border-width : 0.5px 0px 0px 0px;
+}
+
+
 #yield{
+    min-height : 750px;
+    
     margin : 50px auto;
+    border-style : solid;
+    border-width : 0.5px;
+}
+
+
+.border-area{
     border-style : solid;
     border-width : 0.5px;
 }

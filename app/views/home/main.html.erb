@@ -3,21 +3,51 @@
 
 
 <% if user_signed_in? %>
-    <%= link_to "my Diary", diaries_path %>
+    <button>
+        <%= link_to "my Diary", diaries_path %>
+    </button>
+    <br>
     
-    <%= month_calendar do |date| %>
-        <%= date %>
-      <div>
-        <% @diaries.each do |a| %>
-            <% if a.date === date %>
-                <%= link_to a.title, "/diaries/#{a.id}" %>
+    <!-- calendar -->
+    <div class="sections container border-area">
+        <div class="calendar container border-area">
+            <%= month_calendar do |date| %>
+                <div class='cal-contents'>
+                    <%= date.strftime("%m-%d")  %>
+                    
+                    <div class='diary'>
+                        <% @diaries.each do |a| %>
+                            <% if a.date === date %>
+                                <%= link_to a.title, "/diaries/#{a.id}" %>
+                            <% end %>
+                        <% end %>
+                    </div>
+                </div>
             <% end %>
-        <% end %>
-          
-      </div>
-    <% end %>
-
-
-
+        </div>    
+     
+    
+        <div class="pp container border-area">
+            <!-- profile -->
+            <div class='profile container border-area'>
+                
+                <!-- profile img -->
+                <%= image_tag ("profile_img_default"), size: "128", class: "profile-img" %>
+                
+                <%= current_user.name %>
+                <br>
+                쓴 일기 수: <%= @num_d %>  //  읽은 책 : " " 권
+                
+                <%= button_tag "My page" %>
+                
+            </div>
+            
+            <!-- plans -->
+            <div class='planner container border-area'>
+                this is planner section
+            </div>
+        </div>
+    </div>   
+    
 <% end %>  
 

@@ -1,5 +1,8 @@
 class HomeController < ApplicationController
   def main
-    @diaries = Diary.where(user_id: current_user.id)
+    if user_signed_in?
+      @diaries = Diary.where(user_id: current_user.id)
+      @num_d = @diaries.count()
+    end
   end
 end

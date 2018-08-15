@@ -8,16 +8,21 @@
 </head>
 <body>
   
-  <nav>
-    <%= link_to "home", home_main_path %>
-    <br>
+  <nav class="container d-flex justify-content-between ">
+    <div class="p-2 bd-highlight">
+      <%= link_to "home", home_main_path %>
+      <br>
+    </div>
+    
+    <div class="p-2 bd-highlight">
       <% if user_signed_in? %>
         <%= link_to "sign_out", destroy_user_session_path, method: :delete %>
       <% else %>
         <%= link_to "sign_up", new_user_registration_path %>
         <%= link_to "sign_in", new_user_session_path %>
       <% end %>
-      
+    </div>
+    
     <div class="container">
       <% if user_signed_in? %>
           user_Email : <%= current_user.email %> 
@@ -28,14 +33,14 @@
       <% end %>  
     </div>  
     
-    </nav>
+  </nav>
   
   <div class='container' id='yield'>
     <%= yield %>
   </div>
   
-  <footer>
-    
+  <footer class="container">
+    developed by Dongha Yoon
   </footer>
 
 </body>
