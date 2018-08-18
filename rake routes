@@ -1,30 +1,46 @@
-                  Prefix Verb   URI Pattern                    Controller#Action
-                 diaries GET    /diaries(.:format)             diaries#index
-                         POST   /diaries(.:format)             diaries#create
-               new_diary GET    /diaries/new(.:format)         diaries#new
-              edit_diary GET    /diaries/:id/edit(.:format)    diaries#edit
-                   diary GET    /diaries/:id(.:format)         diaries#show
-                         PATCH  /diaries/:id(.:format)         diaries#update
-                         PUT    /diaries/:id(.:format)         diaries#update
-                         DELETE /diaries/:id(.:format)         diaries#destroy
-                    root GET    /                              home#main
-               home_main GET    /home/main(.:format)           home#main
-        new_user_session GET    /users/sign_in(.:format)       users/sessions#new
-            user_session POST   /users/sign_in(.:format)       users/sessions#create
-    destroy_user_session DELETE /users/sign_out(.:format)      users/sessions#destroy
-           user_password POST   /users/password(.:format)      devise/passwords#create
-       new_user_password GET    /users/password/new(.:format)  devise/passwords#new
-      edit_user_password GET    /users/password/edit(.:format) devise/passwords#edit
-                         PATCH  /users/password(.:format)      devise/passwords#update
-                         PUT    /users/password(.:format)      devise/passwords#update
-cancel_user_registration GET    /users/cancel(.:format)        devise/registrations#cancel
-       user_registration POST   /users(.:format)               devise/registrations#create
-   new_user_registration GET    /users/sign_up(.:format)       devise/registrations#new
-  edit_user_registration GET    /users/edit(.:format)          devise/registrations#edit
-                         PATCH  /users(.:format)               devise/registrations#update
-                         PUT    /users(.:format)               devise/registrations#update
-                         DELETE /users(.:format)               devise/registrations#destroy
-                rails_db        /rails/db                      RailsDb::Engine
+                  Prefix Verb   URI Pattern                         Controller#Action
+                   plans GET    /plans(.:format)                    plans#index
+                         POST   /plans(.:format)                    plans#create
+                new_plan GET    /plans/new(.:format)                plans#new
+               edit_plan GET    /plans/:id/edit(.:format)           plans#edit
+                    plan GET    /plans/:id(.:format)                plans#show
+                         PATCH  /plans/:id(.:format)                plans#update
+                         PUT    /plans/:id(.:format)                plans#update
+                         DELETE /plans/:id(.:format)                plans#destroy
+         reading_records GET    /reading_records(.:format)          reading_records#index
+                         POST   /reading_records(.:format)          reading_records#create
+      new_reading_record GET    /reading_records/new(.:format)      reading_records#new
+     edit_reading_record GET    /reading_records/:id/edit(.:format) reading_records#edit
+          reading_record GET    /reading_records/:id(.:format)      reading_records#show
+                         PATCH  /reading_records/:id(.:format)      reading_records#update
+                         PUT    /reading_records/:id(.:format)      reading_records#update
+                         DELETE /reading_records/:id(.:format)      reading_records#destroy
+                 diaries GET    /diaries(.:format)                  diaries#index
+                         POST   /diaries(.:format)                  diaries#create
+               new_diary GET    /diaries/new(.:format)              diaries#new
+              edit_diary GET    /diaries/:id/edit(.:format)         diaries#edit
+                   diary GET    /diaries/:id(.:format)              diaries#show
+                         PATCH  /diaries/:id(.:format)              diaries#update
+                         PUT    /diaries/:id(.:format)              diaries#update
+                         DELETE /diaries/:id(.:format)              diaries#destroy
+                    root GET    /                                   home#main
+               home_main GET    /home/main(.:format)                home#main
+        new_user_session GET    /users/sign_in(.:format)            users/sessions#new
+            user_session POST   /users/sign_in(.:format)            users/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)           users/sessions#destroy
+           user_password POST   /users/password(.:format)           devise/passwords#create
+       new_user_password GET    /users/password/new(.:format)       devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format)      devise/passwords#edit
+                         PATCH  /users/password(.:format)           devise/passwords#update
+                         PUT    /users/password(.:format)           devise/passwords#update
+cancel_user_registration GET    /users/cancel(.:format)             devise/registrations#cancel
+       user_registration POST   /users(.:format)                    devise/registrations#create
+   new_user_registration GET    /users/sign_up(.:format)            devise/registrations#new
+  edit_user_registration GET    /users/edit(.:format)               devise/registrations#edit
+                         PATCH  /users(.:format)                    devise/registrations#update
+                         PUT    /users(.:format)                    devise/registrations#update
+                         DELETE /users(.:format)                    devise/registrations#destroy
+                rails_db        /rails/db                           RailsDb::Engine
 
 Routes for RailsDb::Engine:
             root GET  /                                    rails_db/dashboard#index
@@ -46,4 +62,4 @@ Routes for RailsDb::Engine:
          sql_xls POST /sql-xls(.:format)                   rails_db/sql#xls
 sql_start_import POST /import-start(.:format)              rails_db/sql#import_start
       data_table GET  /data-table(.:format)                rails_db/dashboard#data_table
-      standalone GET  /standalone(.:format)                rails_
+      standalone GET  /standalone(.:format)                rails_d

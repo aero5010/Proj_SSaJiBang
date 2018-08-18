@@ -11,11 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180811051313) do
+ActiveRecord::Schema.define(version: 20180817104748) do
 
   create_table "diaries", force: :cascade do |t|
     t.string   "title"
     t.date     "date"
+    t.text     "content"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "plans", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reading_records", force: :cascade do |t|
+    t.string   "title"
+    t.date     "start_time"
+    t.date     "end_time"
     t.text     "content"
     t.integer  "user_id"
     t.datetime "created_at", null: false

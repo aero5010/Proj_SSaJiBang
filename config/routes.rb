@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :reading_records
+  resources :plans
   resources :diaries
   root 'home#main'
 

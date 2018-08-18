@@ -1,0 +1,24 @@
+git push command
+
+§ git add .
+§ git commit -m "xxxxxx"
+§ git push -u origin master
+
+
+simple calendar
+
+https://melvinchng.github.io/rails/SimpleCalendarGEM.html#31-replaced-js-calendar-with-simplecalendar-gem
+http://excid3.github.io/simple_calendar/
+
+
+
+bootstrap felx
+
+https://getbootstrap.com/docs/4.1/utilities/flex/
+
+
+
+
+
+rails g scaffold ReadingRecord title:string start_time:date end_time:date content:text user_id:integer
+rails g scaffold Plans title:string start_time:datetime end_time:datetime user_id:integer

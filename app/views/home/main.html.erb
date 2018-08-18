@@ -6,6 +6,9 @@
     <button>
         <%= link_to "my Diary", diaries_path %>
     </button>
+    <button>
+        <%= link_to "Reading Records", reading_records_path %>
+    </button>
     <br>
     
     <!-- calendar -->
@@ -22,6 +25,9 @@
                             <% end %>
                         <% end %>
                     </div>
+                    
+                
+                    
                 </div>
             <% end %>
         </div>    
@@ -36,7 +42,7 @@
                 
                 <%= current_user.name %>
                 <br>
-                쓴 일기 수: <%= @num_d %>  //  읽은 책 : " " 권
+                쓴 일기 수: <%= @num_d %>  //  읽은 책 : <%= @num_r %> 권
                 
                 <%= button_tag "My page" %>
                 

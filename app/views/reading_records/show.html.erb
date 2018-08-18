@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @reading_record.title %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @reading_record.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @reading_record.end_time %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @reading_record.content %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @reading_record.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_reading_record_path(@reading_record) %> |
+<%= link_to 'Back', reading_records_path %>
