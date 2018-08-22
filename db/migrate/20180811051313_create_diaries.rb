@@ -6,6 +6,11 @@ class CreateDiaries < ActiveRecord::Migration
       t.text :content
       t.integer :user_id
 
+      resourcify
+      include Authority::Abilities
+      belongs_to :user  
+
+
       t.timestamps null: false
     end
   end

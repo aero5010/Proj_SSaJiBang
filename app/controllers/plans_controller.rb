@@ -1,4 +1,5 @@
 class PlansController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_plan, only: [:show, :edit, :update, :destroy]
 
   # GET /plans
@@ -69,6 +70,7 @@ class PlansController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def plan_params
-      params.require(:plan).permit(:title, :start_time, :end_time, :user_id)
+      params[:plan][:user_id] = current_user.id
+      params.require(:plan).permit(:title, :start_time, :end_time, :content, :user_id)
     end
 end

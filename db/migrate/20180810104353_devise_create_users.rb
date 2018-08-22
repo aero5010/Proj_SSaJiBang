@@ -11,6 +11,13 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
       
+      ## rolify
+      rolify
+      include Authority::UserAbilities  
+      devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+      has_many :diaries, dependent: :destroy
+      
       
       
 

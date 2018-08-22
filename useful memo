@@ -5,14 +5,14 @@ git push command
 § git push -u origin master
 
 
-simple calendar
+>>simple calendar
 
 https://melvinchng.github.io/rails/SimpleCalendarGEM.html#31-replaced-js-calendar-with-simplecalendar-gem
 http://excid3.github.io/simple_calendar/
 
 
 
-bootstrap felx
+>>bootstrap felx
 
 https://getbootstrap.com/docs/4.1/utilities/flex/
 
@@ -21,4 +21,47 @@ https://getbootstrap.com/docs/4.1/utilities/flex/
 
 
 rails g scaffold ReadingRecord title:string start_time:date end_time:date content:text user_id:integer
-rails g scaffold Plans title:string start_time:datetime end_time:datetime user_id:integer
+rails g scaffold Plans title:string start_time:datetime end_time:datetime content:text user_id:integer
+
+
+
+
+>>delete table
+
+$rails console
+ActiveRecord::Migration.drop_table(:table_name)
+
+
+>>HTML5 Input Types
+
+color
+date
+datetime-local
+email
+month
+number
+range
+search
+tel
+time
+url
+week
+
+
+
+
+>> datetime format
+https://apidock.com/ruby/DateTime/strftime
+
+
+>> controller
+https://guides.rorlab.org/action_controller_overview.html
+
+
+>> rolify
+https://luciuschoi.gitbooks.io/exploring_devise/content/user_authorization/
+
+
+*** 할 일!
+    모델 관계 (has_many, belongs_to ...)짜기
+    액션 권한 설정하기!

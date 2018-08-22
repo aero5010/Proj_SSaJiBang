@@ -4,6 +4,7 @@ class CreatePlans < ActiveRecord::Migration
       t.string :title
       t.datetime :start_time
       t.datetime :end_time
+      t.text :content
       t.integer :user_id
 
       t.timestamps null: false

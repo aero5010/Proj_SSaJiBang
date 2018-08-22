@@ -2,12 +2,14 @@
 
 one:
   title: MyString
-  start_time: 2018-08-17 10:47:42
-  end_time: 2018-08-17 10:47:42
+  start_time: 2018-08-18 10:53:24
+  end_time: 2018-08-18 10:53:24
+  content: MyText
   user_id: 1
 
 two:
   title: MyString
-  start_time: 2018-08-17 10:47:42
-  end_time: 2018-08-17 10:47:42
+  start_time: 2018-08-18 10:53:24
+  end_time: 2018-08-18 10:53:24
+  content: MyText
   user_id: 1

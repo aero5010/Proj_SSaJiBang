@@ -69,6 +69,7 @@ class ReadingRecordsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reading_record_params
+      params[:reading_record][:user_id] = current_user.id
       params.require(:reading_record).permit(:title, :start_time, :end_time, :content, :user_id)
     end
 end

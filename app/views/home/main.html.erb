@@ -18,13 +18,22 @@
                 <div class='cal-contents'>
                     <%= date.strftime("%m-%d")  %>
                     
-                    <div class='diary'>
+                    <div>
                         <% @diaries.each do |a| %>
                             <% if a.date === date %>
-                                <%= link_to a.title, "/diaries/#{a.id}" %>
+                                <%= link_to a.title, "/diaries/#{a.id}", :class => "diary" %>
                             <% end %>
                         <% end %>
                     </div>
+                    
+                    <div>
+                        <% @records.each do |r| %>
+                            <% if r.end_time === date %>
+                                <%= link_to r.title, "/reading_records/#{r.id}", :class => "record" %>
+                            <% end %>
+                        <% end %>
+                    </div>
+                    
                     
                 
                     
@@ -49,8 +58,22 @@
             </div>
             
             <!-- plans -->
+            <%= link_to "add plan" ,new_plan_path %>
             <div class='planner container border-area'>
-                this is planner section
+                
+                <div>
+                    <% @plans.each do |p|  %>
+                        <%= link_to p.title, "/plans/#{p.id}" %>
+                        
+                            <%= p.start_time.strftime("%y.%m.%d") %> 
+                            <% if p.start_time === p.end_time %>
+                            <% else %>
+                                - <%= p.end_time.strftime("%y.%m.%d") %>
+                            <% end %>
+                        <br>
+                    <% end %>
+                </div>
+                
             </div>
         </div>
     </div>   
